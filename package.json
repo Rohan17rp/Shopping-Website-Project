@@ -1,0 +1,16 @@
+{
+  "name": "shopping_project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "",
+    "mysql": "^2.18.1",
+    "sequelize": "^5.21.12"
+  }
+}
