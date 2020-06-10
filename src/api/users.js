@@ -18,10 +18,10 @@ route.post('/', (req, res) => {
         username: req.body.username,
         password: req.body.password
     }).then((user) => {
-        res.status(201).send(user)
+        res.send(user)
     }).catch((err) => {
-        res.status(501).send(err)
-        console.error(err)
+        res.send('invalid')
+        // console.error(err)
     })
 })
 
