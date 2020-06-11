@@ -20,7 +20,7 @@ const seed = async () => {
             id: 1,
             name: '7 Pro',
             manufacturer: 'OnePlus',
-            stockcount: 100,
+            stock: 100,
             description: 'The 6.67 inch Fluid AMOLED display on the OnePlus 7 Pro is our most advanced screen ever. Experience unrivalled smoothness and clarity with a 90 Hz refresh rate and QHD+ resolution.',
             price: 42999,
             rating: 4

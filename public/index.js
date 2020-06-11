@@ -8,8 +8,11 @@ function createProductCard(product) {
             <div class="col m-3 p-3">
                 <b>Rs. ${product.price}</b>
             </div>
-            <button class="col btn btn-primary m-3">Add to Cart</button> 
-        </div>
+            <div class="col m-1">
+                <button class="row btn btn-primary m-1 viewDetails" name="${product.id}">View Details</button>
+                <button class="row btn btn-primary m-1 addToCartBtn" name="${product.id}">Add to Cart</button> 
+            </div>
+            </div>
     </div>`
     )
 }
@@ -34,6 +37,12 @@ $(function () {
         for (product of products) {
             productList.append(createProductCard(product))
         }
+        $('.viewDetails').on('click', function (e) {
+            let target = e.target
+            let productId = target.name
+            let url = '/viewproduct.html?productId=' + productId
+            window.open(url, '_self')
+        })
     })
 
     if (sessionStorage.getItem('currentUser')) {
@@ -54,4 +63,6 @@ $(function () {
         sessionStorage.removeItem('currentUser')
         location.reload()
     }
+
+
 })
