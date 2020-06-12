@@ -68,9 +68,21 @@ $(function () {
             window.open(url, '_self')
         })
         $('.addToCartBtn').on('click', function (e) {
-            let target = e.target
-            let productId = target.name
-            addProductToCart(productId)
+            let modalTitle = $('.modal-title')[0]
+            let modalbody = $('.modal-body')[0]
+            let modal = $('.modal')
+            if (sessionStorage.getItem('currentUser')) {
+                let target = e.target
+                let productId = target.name
+                addProductToCart(productId)
+                modalTitle.innerText = 'Congratulations'
+                modalbody.innerHTML = '<p>The item has been added to your cart.</p>'
+
+            } else {
+                modalTitle.innerText = 'Sign in required'
+                modalbody.innerHTML = '<p>You must be logged in to add items to Cart</p>'
+            }
+            modal.modal('toggle')
         })
     })
 

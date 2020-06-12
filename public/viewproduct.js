@@ -1,8 +1,34 @@
+function getIdFromUsername(username, productId, addToCart) {
+    $.get('/api/users', {
+        username: username
+    }, function (user) {
+        // return user.id
+    }).then((user) => {
+        addToCart(productId, user.id)
+    })
+}
+
+function addToCart(pid, uid) {
+    $.post('/api/order', {
+        userId: uid,
+        productId: pid
+    }, function () {
+        // console.log('Added ' + pid + ' to ' + uid + "'s cart")
+    })
+}
+
+function addProductToCart(productId) {
+    let pid = productId
+    let username = sessionStorage.getItem('currentUser')
+    getIdFromUsername(username, productId, addToCart)
+}
+
 $(() => {
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
 
     let productId = urlParams.get('productId')
+    let addToCartBtn = $('.addToCartBtn')[0]
 
     $.post('/api/viewproduct', {
         id: productId
@@ -23,5 +49,27 @@ $(() => {
             Stock = ${product.stock}
             <br>
         `
+        addToCartBtn.name = product.id
     })
+
+
+    //Add this product to cart of current user
+    addToCartBtn.onclick = function (e) {
+        let modalTitle = $('.modal-title')[0]
+        let modalbody = $('.modal-body')[0]
+        let modal = $('.modal')
+        if (sessionStorage.getItem('currentUser')) {
+            let target = e.target
+            let productId = target.name
+            addProductToCart(productId)
+            modalTitle.innerText = 'Congratulations'
+            modalbody.innerHTML = '<p>The item has been added to your cart.</p>'
+        } else {
+            modalTitle.innerText = 'Sign in required'
+            modalbody.innerHTML = '<p>You must be logged in to add items to Cart</p>'
+        }
+        modal.modal('toggle')
+    }
+
+
 })

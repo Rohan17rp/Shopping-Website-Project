@@ -1,4 +1,4 @@
-#Shopping Website Project
+# Shopping Website Project
 <br>
 This is a sample practice project to imitate websites like Amazon, Flipkart etc.
 <br>
@@ -14,14 +14,14 @@ Software Used : Jetbrains Webstorm
 
 
 <br><br>
-##Pre-requisites
+## Pre-requisites
 1. Make sure you have  MySQL installed on your system
 2. NodeJS must be installed and running
 
-##Getting Started
+## Getting Started
 Clone this repository into your system.
 
-##npm packages
+## npm packages
 Install the following packages using npm in the project directory.
 1. express
 2. mysql2
@@ -31,7 +31,7 @@ Install the following packages using npm in the project directory.
 npm install express mysql2 sequelize
 ```
 
-##MySQL
+## MySQL
 We need to set up a MySQL database for the backend to interact with.
 We will create a sample database and a sample user to access this database
 
@@ -46,7 +46,7 @@ grant all privileges on shopproject.* to shopadmin;
 
 If you choose to have some other names for database, user and password for your database, make the according updates in /src/db/connection.js
 
-##Starting up server
+## Starting up server
 Start up src/server.js
 ```
 cd src
@@ -58,5 +58,5 @@ Once started, go to 'localhost:4444' in your browser. (If you choose a different
 
 The shopping website is now running.
 
-##Feedback
+## Feedback
 Drop any suggestions/queries at tarunluthra987@gmail.com
