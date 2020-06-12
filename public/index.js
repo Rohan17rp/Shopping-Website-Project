@@ -23,6 +23,30 @@ function fetchProducts(callback) {
     })
 }
 
+function getIdFromUsername(username, productId, addToCart) {
+    $.get('/api/users', {
+        username: username
+    }, function (user) {
+        // return user.id
+    }).then((user) => {
+        addToCart(productId, user.id)
+    })
+}
+
+function addToCart(pid, uid) {
+    $.post('/api/order', {
+        userId: uid,
+        productId: pid
+    }, function () {
+        console.log('Added ' + pid + ' to ' + uid + "'s cart")
+    })
+}
+
+function addProductToCart(productId) {
+    let pid = productId
+    let username = sessionStorage.getItem('currentUser')
+    getIdFromUsername(username, productId, addToCart)
+}
 
 $(function () {
     let productList = $('#productlist')
@@ -42,6 +66,11 @@ $(function () {
             let productId = target.name
             let url = '/viewproduct.html?productId=' + productId
             window.open(url, '_self')
+        })
+        $('.addToCartBtn').on('click', function (e) {
+            let target = e.target
+            let productId = target.name
+            addProductToCart(productId)
         })
     })
 
@@ -63,6 +92,4 @@ $(function () {
         sessionStorage.removeItem('currentUser')
         location.reload()
     }
-
-
 })

@@ -68,7 +68,7 @@ Order.belongsTo(Product)
 Product.hasMany(Order)
 User.hasOne(Order)
 
-db.sync({alter: true})
+db.sync()
     .then(() => console.log('Database has been synced'))
     .catch((err) => console.error('Error creating DB - ' + err))
 
