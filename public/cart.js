@@ -1,6 +1,10 @@
+let cartTotalAmount = 0
+
+
 function createProductCard(product, orderId) {
     // console.log(product)
     //Accepts a new product detail taken as input from the DB and creates a card to display it on the frontend
+    cartTotalAmount += product.price
     return $(`
     <div class="col-3 card mx-2 p-3">
         <h4 class="product-name">${product.name}</h4>
@@ -37,6 +41,9 @@ function viewProduct(order, productList) {
                 location.reload()
             })
         })
+
+        let totalamount = $('#totalAmount')[0]
+        totalamount.innerText = 'Total Amount = ' + cartTotalAmount
     })
 }
 
