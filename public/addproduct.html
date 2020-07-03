@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- CSS only -->
+    <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+          integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" rel="stylesheet">
+
+    <!-- JS, Popper.js, and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script crossorigin="anonymous"
+            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+            src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script crossorigin="anonymous"
+            integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+            src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+    <script src="addproduct.js"></script>
+    <title>Add Product</title>
+</head>
+<body>
+<div class="modal" role="dialog" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Success</h5>
+                <button aria-label="Close" class="close" data-dismiss="modal" type="button">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>The product has been added to the menu.</p>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-info" data-dismiss="modal" id="goToMenuBtn" type="button">Go to Menu
+                </button>
+                <button class="btn btn-primary" id="addAnotherBtn" type="button">Add another product</button>
+            </div>
+        </div>
+    </div>
+</div>
+<h2 align="center">Add Product Details</h2>
+<div class="p-4 m-4" id="form">
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label for="productname">Name</label>
+            <input class="form-control" id="productname" name="productname" type="text">
+        </div>
+        <div class="form-group col-md-6">
+            <label for="prodmanuf">Manufacturer</label>
+            <input class="form-control" id="prodmanuf" type="text">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="proddescription">Description</label>
+        <input class="form-control" id="proddescription" placeholder="A few lines to describe the product" type="text">
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label for="prodprice">Price</label>
+            <input class="form-control" id="prodprice" type="text">
+        </div>
+        <div class="form-group col-md-4">
+            <label for="prodrating">Rating</label>
+            <input class="form-control" id="prodrating" type="text">
+        </div>
+        <div class="form-group col-md-2">
+            <label for="prodstock">Stock</label>
+            <input class="form-control" id="prodstock" type="text">
+        </div>
+    </div>
+    <button class="btn btn-primary" id="submitbtn">Add Product</button>
+</div>
+</body>
+</html>

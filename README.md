@@ -7,7 +7,8 @@ Created by : <br>
 Tarun Luthra
 ( github : tarunluthra )<br>
 <br>
-Note: This project has been developed on an Ubuntu 18.04 ( Linux ) Machine. Behaviour on Windows/Mac Environment is not yet tested
+Note: This project has been developed on an Ubuntu 18.04 ( Linux ) Machine. <br>
+Behaviour on Windows/Mac Environment is not yet tested.
 <br>
 Software Used : Jetbrains Webstorm
 <br>
@@ -57,6 +58,25 @@ Your server gets started. By default, it will be started on port 4444. Change th
 Once started, go to 'localhost:4444' in your browser. (If you choose a different port, change the number accordingly).
 
 The shopping website is now running.
+
+## Loading Data
+Initially the cart will appear empty as there are no products added.<br>
+You may add new products along with their description and dummy details by going to 
+'localhost:4444/addproduct.html'
+
+<br>
+Alternatively, you can use the dummy data provided in seed.js .
+To use it, go to <br>
+src/db and run file seed.js
+
+```
+cd src
+cd db
+node seed.js
+```
+
+Note that this should be run only after the DB has been created or it will not work.
+The above file will add some dummy data which can be used to view the project.
 
 ## Feedback
 Drop any suggestions/queries at tarunluthra987@gmail.com
