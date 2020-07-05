@@ -22,7 +22,6 @@ $(() => {
     logout.onclick = () => {
         // console.log('logout')
         sessionStorage.removeItem('currentUser')
-        let url = '/'
-        window.open(url, '_self')
+        window.open('/', '_self')
     }
 })

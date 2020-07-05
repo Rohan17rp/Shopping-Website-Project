@@ -14,6 +14,7 @@ function createProductCard(product, orderId) {
                 <b>Rs. ${product.price}</b>
             </div>
             <div class="col m-2 p-2">
+                <button class="row btn btn-primary m-1 viewDetails" name="${product.id}">View Details</button>
                 <button class="btn btn-danger removeFromCart" name="${orderId}">Remove From Cart</button>
             </div>    
         </div>
@@ -42,8 +43,26 @@ function viewProduct(order, productList) {
             })
         })
 
+        $('.viewDetails').on('click', function (e) {
+            let target = e.target
+            let productId = target.name
+            let url = '/viewproduct.html?productId=' + productId
+            window.open(url, '_self')
+        })
+
         let totalamount = $('#totalAmount')[0]
         totalamount.innerText = 'Total Amount = ' + cartTotalAmount
+
+        let clearCartBtn = $('#clearcart')[0]
+        if (cartTotalAmount != 0) {
+            clearCartBtn.style.display = 'block'
+            clearCartBtn.onclick = () => {
+                $('.removeFromCart').click()
+            }
+        } else {
+            // console.log('here')
+            clearCartBtn.style.display = 'none'
+        }
     })
 }
 
@@ -76,8 +95,12 @@ function getCartItems(productList) {
 
 $(() => {
     let productList = $('#productList')
+    $('#clearcart')[0].style.display = 'none'
 
     productList.empty()
+
+    let totalamount = $('#totalAmount')[0]
+    totalamount.innerText = 'Total Amount = ' + cartTotalAmount
 
     getCartItems(productList)
 

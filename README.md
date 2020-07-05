@@ -13,7 +13,6 @@ Behaviour on Windows/Mac Environment is not yet tested.
 Software Used : Jetbrains Webstorm
 <br>
 
-
 <br><br>
 ## Pre-requisites
 1. Make sure you have  MySQL installed on your system
@@ -70,13 +69,11 @@ To use it, go to <br>
 src/db and run file seed.js
 
 ```
-cd src
-cd db
-node seed.js
+node src/db/seed.js
 ```
 
 Note that this should be run only after the DB has been created or it will not work.
 The above file will add some dummy data which can be used to view the project.
 
 ## Feedback
-Drop any suggestions/queries at tarunluthra987@gmail.com
+Drop any suggestions/queries at tarunluthra987@gmail.com .<br>

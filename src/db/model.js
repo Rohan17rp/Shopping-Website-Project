@@ -30,7 +30,8 @@ const Product = db.define('products', {
     },
     name: {
         type: DataTypes.STRING,
-        allowNull: false
+        allowNull: false,
+        unique: true
     },
     manufacturer: {
         type: DataTypes.STRING,

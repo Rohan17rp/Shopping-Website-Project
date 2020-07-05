@@ -42,7 +42,7 @@ const seed = async () => {
                 '17.02 cm (6.7 inch) Full HD+ Display\n' +
                 '48MP + 12MP + 5MP | 32MP Front Camera\n' +
                 '4500 mAh Lithium-ion Battery\n' +
-                'Qualcomm Snapdragon 855 (SM8150) Processor'
+                'Qualcomm Snapdragon 855 (SM8150) Processor',
             price: 42999,
             rating: 5
         })

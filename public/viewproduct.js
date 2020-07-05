@@ -72,4 +72,29 @@ $(() => {
     }
 
 
+    let logout = $('#logout')[0]
+    let userblock = $('#userblock')[0]
+    let loginblock = $('#loginblock')[0]
+    let usernametext = $(`#usernametext`)[0]
+
+
+    if (sessionStorage.getItem('currentUser')) {
+        // console.log('user found')
+        userblock.style.display = 'block'
+        loginblock.style.display = 'none'
+        let currentUser = sessionStorage.getItem('currentUser')
+        usernametext.innerText = currentUser
+    } else {
+        // console.log('ok')
+        userblock.style.display = 'none'
+        loginblock.style.display = 'block'
+    }
+
+
+    logout.onclick = () => {
+        // console.log('logout')
+        sessionStorage.removeItem('currentUser')
+        location.reload()
+    }
+
 })

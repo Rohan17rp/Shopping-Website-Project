@@ -19,8 +19,9 @@ function callback(req, res) {
             res.send('Incorrect username or password')
         }
     }).catch((err) => {
-        res.status(503).send(err)
-        console.error(err)
+        // res.status(503).send(err)
+        // console.error(err)
+        res.send('Incorrect username or password')
     })
 }
 
