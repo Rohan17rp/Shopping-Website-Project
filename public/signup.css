@@ -1,0 +1,19 @@
+body {
+    background-color: rgba(85, 194, 227, 0.76);
+}
+
+#heading {
+    font-size: 55px;
+    font-weight: bold;
+}
+
+a {
+    margin: 20px;
+    font-size: 25px;
+    /*font-weight: bold;*/
+}
+
+label {
+    font-size: 30px;
+    font-weight: bold;
+}

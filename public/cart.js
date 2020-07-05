@@ -54,7 +54,7 @@ function viewProduct(order, productList) {
         totalamount.innerText = 'Total Amount = ' + cartTotalAmount
 
         let clearCartBtn = $('#clearcart')[0]
-        if (cartTotalAmount != 0) {
+        if (cartTotalAmount !== 0) {
             clearCartBtn.style.display = 'block'
             clearCartBtn.onclick = () => {
                 $('.removeFromCart').click()
@@ -104,7 +104,12 @@ $(() => {
 
     getCartItems(productList)
 
-
     let usernametext = $('#usernametext')[0]
     usernametext.innerText = sessionStorage.getItem('currentUser')
+
+    let logoutbtn = $('#logout')[0]
+    logoutbtn.onclick = () => {
+        sessionStorage.removeItem('currentUser')
+        window.open('/', '_self')
+    }
 })

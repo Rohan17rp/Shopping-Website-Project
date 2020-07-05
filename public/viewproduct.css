@@ -1,0 +1,34 @@
+body {
+    background-color: rgba(85, 194, 227, 0.76);
+}
+
+#heading {
+    font-size: 55px;
+    font-weight: bold;
+}
+
+#userblock {
+    justify-content: center;
+}
+
+#usernametext {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+#logout {
+    background-color: rgba(25, 142, 245, 0.95);
+    font-size: large;
+    font-weight: bold;
+}
+
+#cart {
+    background-color: #ffffff;
+    font-size: large;
+    font-weight: bold;
+    /*font-family: bold;*/
+}
+
+#details {
+    font-size: 22px;
+}

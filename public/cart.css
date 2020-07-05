@@ -1,0 +1,45 @@
+body {
+    background-color: rgba(85, 194, 227, 0.76);
+}
+
+#userinfo {
+    text-align: center;
+}
+
+#menulogoutblock {
+    justify-content: center;
+}
+
+#heading {
+    font-size: 55px;
+    font-weight: bold;
+    text-align: center;
+}
+
+#usernametext {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+#menu {
+    background-color: #ffffff;
+    font-size: large;
+    font-weight: bold;
+    /*font-family: bold;*/
+}
+
+#logout {
+    background-color: rgba(25, 142, 245, 0.95);
+    font-size: large;
+    font-weight: bold;
+}
+
+#totalAmount {
+    background-color: #ffffff;
+    justify-content: center;
+    font-size: 25px;
+}
+
+#userblock {
+    justify-content: center;
+}

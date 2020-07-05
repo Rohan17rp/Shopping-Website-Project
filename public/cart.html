@@ -18,11 +18,12 @@
             integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
             src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 
+    <link href="cart.css" rel="stylesheet">
     <script src="cart.js"></script>
     <title>Your Cart</title>
 </head>
 <body>
-<h2>Your Cart</h2>
+<h2 id="heading">Your Cart</h2>
 <div class="row">
     <div class="col-9 mx-2" id="productList">
         Cart Items
@@ -32,16 +33,15 @@
             <a class="h3 col-12 m-2" href="/me.html" id="usernametext">Username here</a>
         </div>
         <br>
-        <div class="row">
-            <a class="btn btn-warning col-3 p-1 m-2" href="/" id="menu">Menu</a>
-            <a class="btn btn-success col-3 p-1 m-2" id="logout">Logout</a>
+        <div class="row" id="menulogoutblock">
+            <a class="btn col-3 p-2 m-2" href="/" id="menu">Menu</a>
+            <a class="btn col-3 p-2 m-2" id="logout">Logout</a>
         </div>
         <br><br>
-        <h2>
-            <div class="row alert alert-success" id="totalAmount">
-                <!-- Will be filled by JS-->
-            </div>
-        </h2>
+        <div class="row alert" id="totalAmount">
+            <!-- Will be filled by JS-->
+        </div>
+
 
         <div class="btn btn-info" id="clearcart">
             <h4> Clear Cart </h4>

@@ -1,5 +1,10 @@
 body {
-    background-color: #55c2e3;
+    background-color: rgba(85, 194, 227, 0.76);
+}
+
+#shopheading {
+    font-size: 55px;
+    font-weight: bold;
 }
 
 .userclass {
@@ -26,4 +31,22 @@ body {
     padding: 0.5px;
     vertical-align: top;
     margin-left: -10px;
+}
+
+#usernametext {
+    font-size: 40px;
+    font-weight: bold;
+}
+
+#cart {
+    background-color: #ffffff;
+    font-size: large;
+    font-weight: bold;
+    /*font-family: bold;*/
+}
+
+#logout {
+    background-color: rgba(25, 142, 245, 0.95);
+    font-size: large;
+    font-weight: bold;
 }
