@@ -5,6 +5,7 @@ function createProductCard(product, orderId) {
     // console.log(product)
     //Accepts a new product detail taken as input from the DB and creates a card to display it on the frontend
     cartTotalAmount += product.price
+    // console.log("carttotal = " + cartTotalAmount)
     return $(`
     <div class="col-3 card mx-2 p-3">
         <h4 class="product-name">${product.name}</h4>
@@ -24,21 +25,22 @@ function createProductCard(product, orderId) {
 }
 
 function viewProduct(order, productList) {
-    console.log('In viewProduct - ' + order)
+    // console.log('In viewProduct - ' + order)
     $.post('/api/viewproduct', {
         id: order.productId
     }, function (product) {
         // console.log(product)
+        // console.log(`in view product callback`)
         productList.append(createProductCard(product, order.id))
     }).then(() => {
         $('.removeFromCart').on('click', function (e) {
             let target = e.target
             let orderId = target.name
-            console.log(orderId)
+            // console.log(orderId)
             $.get('/api/order', {
                 orderId: orderId
             }, function (status) {
-                console.log(status)
+                // console.log(status)
                 location.reload()
             })
         })
@@ -50,19 +52,45 @@ function viewProduct(order, productList) {
             window.open(url, '_self')
         })
 
+        // console.log("In viewproduct then, total = " + cartTotalAmount)
         let totalamount = $('#totalAmount')[0]
-        totalamount.innerText = 'Total Amount = ' + cartTotalAmount
+        totalamount.innerText = 'Total Amount = ₹ ' + cartTotalAmount
+
+        // console.log("in then, total = " + cartTotalAmount)
 
         let clearCartBtn = $('#clearcart')[0]
-        if (cartTotalAmount !== 0) {
-            clearCartBtn.style.display = 'block'
-            clearCartBtn.onclick = () => {
-                $('.removeFromCart').click()
-            }
-        } else {
-            // console.log('here')
-            clearCartBtn.style.display = 'none'
+        // console.log("not zero")
+        clearCartBtn.style.display = 'block'
+        clearCartBtn.onclick = () => {
+            $('.removeFromCart').click()
         }
+    })
+}
+
+function getProductList(userId, productList) {
+    $.post('/api/viewcart', {
+        userId: userId
+    }, function (orders) {
+        // console.log(orders)  //Works fine
+        if (orders.length === 0) {
+            // console.log("total 0")
+            let clearCartBtn = $('#clearcart')[0]
+            clearCartBtn.style.display = 'none'
+            productList[0].innerHTML = `
+                <br><br>
+                <h4>
+                Your Cart is Empty. Go to the <a href="/">menu</a> to add some products to it.
+                </h4>
+            `
+            // console.log(productList.innerHTML)
+        } else {
+            // console.log('In else part')
+            for (order of orders) {
+                // console.log(order)
+                viewProduct(order, productList)
+            }
+        }
+        // console.log("in callback, total = " + cartTotalAmount)
     })
 }
 
@@ -73,18 +101,6 @@ function getIdFromUsername(username, getProductList, productList) {
         // return user.id
     }).then((user) => {
         getProductList(user.id, productList)
-    })
-}
-
-function getProductList(userId, productList) {
-    $.post('/api/viewcart', {
-        userId: userId
-    }, function (orders) {
-        // console.log(orders)  //Works fine
-        for (order of orders) {
-            // console.log(order)
-            viewProduct(order, productList)
-        }
     })
 }
 

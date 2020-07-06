@@ -43,3 +43,7 @@ body {
 #userblock {
     justify-content: center;
 }
+
+#productList {
+    padding: 22px;
+}
