@@ -7,15 +7,15 @@ function createProductCard(product, orderId) {
     cartTotalAmount += product.price
     // console.log("carttotal = " + cartTotalAmount)
     return $(`
-    <div class="col-3 card mx-2 p-3">
+    <div class="col-8 col-sm-8 col-md-5 col-lg-3 card mx-2 p-3 m-2">
         <h4 class="product-name">${product.name}</h4>
         <div class="product-manufacturer">${product.manufacturer}</div>
         <div class="row"> 
-            <div class="col m-3 p-3">
+            <div class="col m-2 p-1">
                 <b>Rs. ${product.price}</b>
             </div>
             <div class="col m-2 p-2">
-                <button class="row btn btn-primary m-1 viewDetails" name="${product.id}">View Details</button>
+                <button class="btn btn-primary m-1 viewDetails" name="${product.id}">View Details</button>
                 <button class="btn btn-danger removeFromCart" name="${orderId}">Remove From Cart</button>
             </div>    
         </div>

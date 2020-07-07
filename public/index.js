@@ -1,18 +1,18 @@
 function createProductCard(product) {
     //Accepts a new product detail taken as input from the DB and creates a card to display it on the frontend
     return $(`
-    <div class="col-3 card mx-2 p-3">
+    <div class="col-8 col-sm-8 col-md-5 col-lg-3 card mx-2 p-3 m-2">
         <h4 class="product-name">${product.name}</h4>
         <div class="product-manufacturer">${product.manufacturer}</div>
         <div class="row">
-            <div class="col m-3 p-3">
+            <div class="col m-2 p-2 product-price">
                 <b>Rs. ${product.price}</b>
             </div>
             <div class="col m-1">
                 <button class="row btn btn-primary m-1 viewDetails" name="${product.id}">View Details</button>
                 <button class="row btn btn-primary m-1 addToCartBtn" name="${product.id}">Add to Cart</button> 
             </div>
-            </div>
+        </div>
     </div>`
     )
 }
@@ -77,7 +77,6 @@ $(function () {
                 addProductToCart(productId)
                 modalTitle.innerText = 'Congratulations'
                 modalbody.innerHTML = '<p>The item has been added to your cart.</p>'
-
             } else {
                 modalTitle.innerText = 'Sign in required'
                 modalbody.innerHTML = '<p>You must be logged in to add items to Cart</p>'

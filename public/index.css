@@ -42,11 +42,52 @@ body {
     background-color: #ffffff;
     font-size: large;
     font-weight: bold;
-    /*font-family: bold;*/
 }
 
 #logout {
     background-color: rgba(25, 142, 245, 0.95);
     font-size: large;
     font-weight: bold;
+}
+
+#userinfo, #logininfo {
+    justify-content: space-evenly;
+}
+
+@media (max-width: 1200px) {
+    #usernametext {
+        font-size: 35px;
+    }
+
+    .product-price {
+        font-size: 13px;
+    }
+
+    .product-name {
+        font-size: 20px;
+    }
+
+    .viewDetails, .addToCartBtn {
+        font-size: 11px;
+    }
+}
+
+@media (max-width: 960px) {
+    #cart, #logout {
+        font-size: medium;
+    }
+
+    #usernametext {
+        font-size: 32px;
+    }
+}
+
+@media (max-width: 768px) {
+    #cart, #logout {
+        font-size: small;
+    }
+
+    #usernametext {
+        font-size: 28px;
+    }
 }

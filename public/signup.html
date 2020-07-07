@@ -22,35 +22,38 @@
 <body>
 <h2 align="center" id="heading">Sign Up</h2>
 <br><br>
-<div class="container col-8">
+<div class="container" id="detailBox">
     <div class="form-group row">
-        <label class="col-sm-2 col-form-label" for="name">Name : </label>
-        <div class="col-sm-5">
+        <label class="col-md-2 col-form-label" for="name">Name : </label>
+        <div class="col-md">
             <input class="form-control" id="name" placeholder="Full Name" type="text">
         </div>
     </div>
     <div class="form-group row">
-        <label class="col-sm-2 col-form-label" for="username">Username : </label>
-        <div class="col-sm-5">
+        <label class="col-md-2 col-form-label" for="username">Username : </label>
+        <div class="col-md">
             <input class="form-control" id="username" placeholder="username" type="text">
         </div>
     </div>
     <div class="form-group row">
-        <label class="col-sm-2 col-form-label" for="password">Password : </label>
-        <div class="col-sm-5">
+        <label class="col-md-2 col-form-label" for="password">Password : </label>
+        <div class="col-md">
             <input class="form-control" id="password" placeholder="Password" type="password">
         </div>
     </div>
     <div class="form-group row">
-        <label class="col-sm-2 col-form-label" for="confirmPassword">Confirm Password : </label>
-        <div class="col-sm-5">
+        <label class="col-md-2 col-form-label" for="confirmPassword">Confirm Password : </label>
+        <div class="col-md">
             <input class="form-control" id="confirmPassword" placeholder="Confirm Password"
                    type="password">
             <small class="form-text text-muted" hidden id="confirmPasswordHelp">Password does not match.</small>
         </div>
     </div>
 
-    <button class="btn btn-primary" id="submitbtn">Submit</button>
+    <div class="row">
+        <button class="col btn btn-primary p-2 m-2" id="submitbtn">Submit</button>
+        <a class="col btn btn-info p-2 m-2" href="/login.html">Already have an account? Log in.</a>
+    </div>
 </div>
 
 <p class="m-4 p-4" id="para">

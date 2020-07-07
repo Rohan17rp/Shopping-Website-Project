@@ -28,3 +28,13 @@ body {
     padding: 20px;
     font-size: 30px;
 }
+
+@media (max-width: 768px) {
+    #content {
+        font-size: 25px;
+    }
+
+    #heading {
+        font-size: 40px;
+    }
+}

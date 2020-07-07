@@ -1,4 +1,13 @@
-function getIdFromUsername(username, productId, addToCart) {
+function addToCart(pid, uid) {
+    $.post('/api/order', {
+        userId: uid,
+        productId: pid
+    }, function () {
+        console.log('Added ' + pid + ' to ' + uid + "'s cart")
+    })
+}
+
+function getIdFromUsername(username, productId) {
     $.get('/api/users', {
         username: username
     }, function (user) {
@@ -8,19 +17,11 @@ function getIdFromUsername(username, productId, addToCart) {
     })
 }
 
-function addToCart(pid, uid) {
-    $.post('/api/order', {
-        userId: uid,
-        productId: pid
-    }, function () {
-        // console.log('Added ' + pid + ' to ' + uid + "'s cart")
-    })
-}
 
 function addProductToCart(productId) {
     let pid = productId
     let username = sessionStorage.getItem('currentUser')
-    getIdFromUsername(username, productId, addToCart)
+    getIdFromUsername(username, productId)
 }
 
 $(() => {
@@ -34,20 +35,37 @@ $(() => {
         id: productId
     }, function (product) {
         console.log(product.name)
-        $('#productName')[0].innerText = product.name
+        $('#productName')[0].innerHTML = `
+        <span style="font-family: 'Century Schoolbook L',serif">
+            ${product.name}
+        </span>`
         $('#details')[0].innerHTML = `
-            Product Id = ${product.id}
-            <br>
-            Manufacturer = ${product.manufacturer}
-            <br>
-            Description = ${product.description}
-            <br>
-            Price = ${product.price}
-            <br>
-            Rating = ${product.rating}
-            <br>
-            Stock = ${product.stock}
-            <br>
+            <table border="1px" cellpadding="6px" id="detailsTable">
+                <tr>
+                    <th scope="row">Product Id</th>
+                    <td>${product.id}</td>
+                </tr>
+                <tr>
+                    <th scope="row">Manufacturer</th>
+                    <td>${product.manufacturer}</td>
+                </tr>
+                <tr>
+                    <th scope="row">Description</th>
+                    <td>${product.description}</td>
+                </tr>
+                <tr>
+                    <th scope="row">Price</th>
+                    <td>${product.price}</td>
+                </tr>
+                <tr>
+                    <th scope="row">Rating</th>
+                    <td>${product.rating}</td>
+                </tr>
+                <tr>
+                    <th scope="row">Stock</th>
+                    <td>${product.stock}</td>
+                </tr>
+            </table>
         `
         addToCartBtn.name = product.id
     })

@@ -7,13 +7,11 @@ body {
     font-weight: bold;
 }
 
-a {
-    margin: 20px;
-    font-size: 25px;
-    /*font-weight: bold;*/
-}
-
 label {
     font-size: 30px;
     font-weight: bold;
+}
+
+#detailBox {
+    justify-content: space-evenly;
 }
