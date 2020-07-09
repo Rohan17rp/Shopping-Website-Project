@@ -8,4 +8,8 @@ app.use(express.urlencoded({extended: true}))
 app.use('/', express.static(path.join(__dirname, '../public')))
 app.use('/api', require('./api').route)
 
-app.listen(4444, console.log('Server started on localhost:4444'))
+require('./db/seed')
+
+const SERVER_PORT = process.env.PORT || 4444
+
+app.listen(SERVER_PORT, console.log('Server started on localhost:' + SERVER_PORT))
