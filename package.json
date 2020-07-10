@@ -13,8 +13,8 @@
     "express": "",
     "mysql": "^2.18.1",
     "sequelize": "^5.21.12"
-  },
+  },  
   "engines": {
-    "node": "8.10"
+    "node": "8.10.0"
   }
 }
